@@ -1,0 +1,105 @@
+autostart = False
+version = 0.8.3.1
+[127.0.0.1:7200]
+    workingdir = C:\Users\SALU\AppData\Local\Temp
+    udp = 10000
+    [[3640]]
+        image = E:\C3640_0x6051f000.BIN
+        idlepc = 0x6051f000
+        sparsemem = True
+        ghostios = True
+        chassis = 3640
+    [[ROUTER R1]]
+        model = 3640
+        console = 2001
+        aux = 2501
+        slot0 = NM-1FE-TX
+        f0/0 = R2 f0/0
+        slot1 = NM-1FE-TX
+        f1/0 = R3 f0/0
+        cnfg = E:\GNS Working Folder\bgp community\configs\R1.cfg
+        x = -354.0
+        y = 122.0
+        z = 1.0
+    [[ROUTER R2]]
+        model = 3640
+        console = 2002
+        aux = 2502
+        slot0 = NM-1FE-TX
+        f0/0 = R1 f0/0
+        cnfg = E:\GNS Working Folder\bgp community\configs\R2.cfg
+        x = -10.0
+        y = 17.0
+        z = 1.0
+    [[ROUTER R3]]
+        model = 3640
+        console = 2003
+        aux = 2503
+        slot0 = NM-1FE-TX
+        f0/0 = R1 f1/0
+        cnfg = E:\GNS Working Folder\bgp community\configs\R3.cfg
+        x = -4.0
+        y = 210.0
+        z = 1.0
+[GNS3-DATA]
+    configs = E:\GNS Working Folder\bgp community\configs
+    [[NOTE 1]]
+        text = "NEW YORK"
+        x = -342.0
+        y = 209.0
+    [[NOTE 2]]
+        text = "HAMBURG"
+        x = 28.0
+        y = 268.0
+    [[NOTE 3]]
+        text = "AMSTERDAM"
+        x = 39.0
+        y = -26.0
+    [[NOTE 4]]
+        text = "AS 2"
+        x = 95.0
+        y = 120.0
+    [[NOTE 5]]
+        text = "AS 1"
+        x = -406.0
+        y = 199.0
+    [[NOTE 6]]
+        text = ".2"
+        x = -50.0
+        y = 226.0
+    [[NOTE 7]]
+        text = ".2"
+        x = -63.0
+        y = 18.0
+    [[NOTE 8]]
+        text = ".1"
+        x = -251.0
+        y = 191.0
+    [[NOTE 9]]
+        text = ".1"
+        x = -274.0
+        y = 107.0
+    [[NOTE 10]]
+        text = "192.168.12.0/24"
+        x = -220.0
+        y = 51.0
+    [[NOTE 11]]
+        text = "f0/0"
+        x = -5.79262541535
+        y = 12.2464256099
+        interface = R3 f0/0
+    [[NOTE 12]]
+        text = "f0/0"
+        x = -5.25751452681
+        y = 33.6774390271
+        interface = R2 f0/0
+    [[NOTE 13]]
+        text = "f1/0"
+        x = 71.7926254154
+        y = 31.7535743901
+        interface = R1 f1/0
+    [[NOTE 14]]
+        text = "f0/0"
+        x = 71.2575145268
+        y = 10.3225609729
+        interface = R1 f0/0
